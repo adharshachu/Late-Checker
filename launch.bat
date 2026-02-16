@@ -18,14 +18,14 @@ if %errorlevel% neq 0 (
     echo.
     echo This application requires Node.js to run.
     echo ---------------------------------------------------
-    echo Option 1: Install automatically via Winget (Recommended)
+    echo Option 1: Install automatically via Winget - Recommended
     echo Option 2: Open Download Page
     echo ---------------------------------------------------
     echo.
     set /p install_choice="Type 1 or 2 and press Enter: "
     
     if "!install_choice!"=="1" (
-        echo [INFO] Attempting to install Node.js (LTS) via Winget...
+        echo [INFO] Attempting to install Node.js LTS via Winget...
         winget install -e --id OpenJS.NodeJS.LTS
         if !errorlevel! neq 0 (
             echo [ERROR] Winget installation failed. Please install manually.
@@ -54,7 +54,7 @@ cd /d "%APP_DIR%"
 echo.
 if not exist "node_modules" (
     echo [INFO] First time setup: Installing dependencies...
-    echo        (This may take a minute, please wait)
+    echo        This may take a minute, please wait
     call npm install
     if %errorlevel% neq 0 (
         color 0C
